@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController
 class HelloController {
 
     @GetMapping
-    fun hello() : String {
-        return "hello"
+    fun hello() : JsonResult {
+        return JsonResult("hello")
     }
 }
+
+data class JsonResult (val content: String)
